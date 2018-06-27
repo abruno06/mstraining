@@ -10,9 +10,8 @@ RUN  ["/usr/bin/qemu-arm-static", "/usr/bin/which","npm" ]
 #RUN mkdir -p /home/data
 COPY . /home/data
 WORKDIR /home/data
-RUN  ["/usr/bin/qemu-arm-static", "/usr/local/bin/npm","install" ]
-
-#RUN npm install
+#RUN  ["/usr/bin/qemu-arm-static", "/usr/local/bin/npm","install" ]
+RUN npm install
 EXPOSE 3000
 ENTRYPOINT ["npm","start"]
 
