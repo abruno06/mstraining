@@ -1,2 +1,3 @@
+#!/usr/bin/bash
 apt-get install qemu qemu-user-static binfmt-support
 
