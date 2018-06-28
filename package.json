@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "4.16.3",
+    "eureka-js-client": "4.x.x",
     "os": "0.1.1"
   }
 }
