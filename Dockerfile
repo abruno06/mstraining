@@ -12,7 +12,7 @@ COPY . /home/data
 WORKDIR /home/data
 #RUN  ["/usr/bin/qemu-arm-static", "/usr/local/bin/npm","install" ]
 RUN npm install
-EXPOSE 3000
+EXPOSE 3002
 ENTRYPOINT ["npm","start"]
 
 
