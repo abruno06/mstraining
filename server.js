@@ -3,11 +3,12 @@ const os = require('os')
 const app = express()
 
 const Eureka = require('eureka-js-client').Eureka;
+
 // example configuration
-const client = new Eureka({
+var clientInformation = {
   "instance": {
     "app": "helloservice",
-    "hostName": "rpi-ab",
+    "hostName": os.hostname(),
     "ipAddr": "172.20.61.23",
      "port": {
       '$': 3000,
@@ -20,12 +21,15 @@ const client = new Eureka({
     }
   },
   "eureka": {
-    "host": "172.20.61.29",
+    "host": process.env.EUREKASRV,
     "port": 8080
   }
-});
+};
 
-app.get('/', (req, res) => res.send(`{"servername": "${os.hostname}"`))
+console.log(clientInformation);
+const client = new Eureka(clientInformation);
+
+app.get('/', (req, res) => res.send(`{"servername": "${os.hostname}"}`))
 
 app.listen(3002, () => console.log('listening on port 3002'))
 
