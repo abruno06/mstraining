@@ -22,7 +22,7 @@ var clientInformation = {
   },
   "eureka": {
     "host": process.env.EUREKASRV,
-    "port": 8080
+    "port": process.env.EUREKAPORT
   }
 };
 
